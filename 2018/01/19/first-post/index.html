@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-tw">
+<html class="theme-next mist use-motion" lang="zh-tw">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -68,6 +68,9 @@
 
 
 
+  <meta property="fb:admins" content="indiana.zhao" />
+  <meta property="fb:app_id" content="" />
+
 
 
 
@@ -75,7 +78,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '6.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -107,7 +110,7 @@
 <meta property="og:site_name" content="Indiana 的學習筆記">
 <meta property="og:description" content="一直以來都習慣用 Google Doc 來製作筆記，最多是與同事協同編輯一些檔案。但覺得還是有些缺點：  程式碼不太容易編輯/閱讀 不易快速分享/查詢  趁這次改用 hexo 把一些過去的筆記整理出來，也順便練習一下 markdown 語法。 筆記內容主要是以自己學習過程踩過的雷、提醒自己注意的內容為主，所以排版上可能不一定符合各位的需求。如果有人能因為這些紀錄受益，也算是自己對開源的一">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-01-19T09:57:12.564Z">
+<meta property="og:updated_time" content="2018-01-19T15:37:18.341Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前言">
 <meta name="twitter:description" content="一直以來都習慣用 Google Doc 來製作筆記，最多是與同事協同編輯一些檔案。但覺得還是有些缺點：  程式碼不太容易編輯/閱讀 不易快速分享/查詢  趁這次改用 hexo 把一些過去的筆記整理出來，也順便練習一下 markdown 語法。 筆記內容主要是以自己學習過程踩過的雷、提醒自己注意的內容為主，所以排版上可能不一定符合各位的需求。如果有人能因為這些紀錄受益，也算是自己對開源的一">
@@ -122,6 +125,24 @@
 
   <title>前言 | Indiana 的學習筆記</title>
   
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 
 
@@ -209,6 +230,12 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分類</a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />歸檔</a>
@@ -257,7 +284,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Indiana">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/img/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -290,8 +317,36 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/19/first-post/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://indianazhao.github.io/2018/01/19/first-post/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
             
           
 
@@ -342,8 +397,42 @@
 
       
       
+        <div class="post-widgets">
+        
+
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
+
+        
+        </div>
+      
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/19/nativescript-troubleshooting/" rel="prev" title="NativeScript 的故障排除">
+                NativeScript 的故障排除 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -365,6 +454,16 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div class="fb-comments"
+           data-href="http://indianazhao.github.io/2018/01/19/first-post/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    </div>
 
   
 
@@ -394,6 +493,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/img/avatar.jpg"
+                alt="Indiana" />
+            
               <p class="site-author-name" itemprop="name">Indiana</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -405,12 +508,21 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">文章</span>
                   </a>
                 </div>
               
 
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分類</span>
+                  </a>
+                </div>
               
 
               
@@ -466,7 +578,7 @@
 
 
 
-  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.1</div>
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.1</div>
 
 
 

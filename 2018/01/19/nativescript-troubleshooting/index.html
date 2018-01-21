@@ -103,23 +103,27 @@
   <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Indiana 的學習筆記">
-<meta property="og:url" content="http://indianazhao.github.io/index.html">
+<meta name="description" content="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NativeScript 的故障排除">
+<meta property="og:url" content="http://indianazhao.github.io/2018/01/19/nativescript-troubleshooting/index.html">
 <meta property="og:site_name" content="Indiana 的學習筆記">
+<meta property="og:description" content="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-01-21T08:14:55.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Indiana 的學習筆記">
+<meta name="twitter:title" content="NativeScript 的故障排除">
+<meta name="twitter:description" content="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android">
 
 
 
 
 
 
-  <link rel="canonical" href="http://indianazhao.github.io/"/>
+  <link rel="canonical" href="http://indianazhao.github.io/2018/01/19/nativescript-troubleshooting/"/>
 
 
-  <title>Indiana 的學習筆記</title>
+  <title>NativeScript 的故障排除 | Indiana 的學習筆記</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -184,8 +188,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -259,9 +262,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -293,9 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/19/nativescript-troubleshooting/" itemprop="url">NativeScript 的故障排除</a></h1>
+          <h1 class="post-title" itemprop="name headline">NativeScript 的故障排除</h1>
         
 
         <div class="post-meta">
@@ -371,9 +372,7 @@
       
 
       
-        
-          
-            <h3 id="錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system"><a href="#錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system" class="headerlink" title="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system"></a><strong>[錯誤訊息]</strong> You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system</h3><p>直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system.</p>
+        <h3 id="錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system"><a href="#錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system" class="headerlink" title="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system"></a><strong>[錯誤訊息]</strong> You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system</h3><p>直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system.</p>
 <blockquote>
 <p><strong>[解決方法]</strong> 單獨執行分解動作的這一個步驟：<br><code>$ANDROID_HOME/tools/bin/sdkmanager &quot;tools&quot; &quot;platform-tools&quot; &quot;platforms;android-25&quot; &quot;build-tools;25.0.2&quot; &quot;extras;android;m2repository&quot; &quot;extras;google;m2repository&quot;</code></p>
 </blockquote>
@@ -427,8 +426,6 @@
 </ul>
 <p>參考連結：<a href="https://github.com/NativeScript/nativescript-angular/issues/916#issuecomment-318860411" target="_blank" rel="noopener">link</a></p>
 
-          
-        
       
     </div>
     
@@ -445,166 +442,46 @@
       
 
       
-
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://indianazhao.github.io/2018/01/19/first-post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Indiana">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Indiana 的學習筆記">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/19/first-post/" itemprop="url">前言</a></h1>
+        <div class="post-widgets">
         
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-19T17:26:40+08:00">2018-01-19</time>
+        
+          <div class="social-like">
             
 
             
-
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
             
-          </span>
+          </div>
+        
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/01/19/first-post/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://indianazhao.github.io/2018/01/19/first-post/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+        
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
       
 
       
-        
-          
-            <p>一直以來都習慣用 Google Doc 來製作筆記，最多是與同事協同編輯一些檔案。但覺得還是有些缺點：</p>
-<ul>
-<li>程式碼不太容易編輯/閱讀</li>
-<li>不易快速分享/查詢</li>
-</ul>
-<p>趁這次改用 <a href="https://hexo.io/" target="_blank" rel="noopener">hexo</a> 把一些過去的筆記整理出來，也順便練習一下 markdown 語法。</p>
-<p>筆記內容主要是以自己學習過程踩過的雷、提醒自己注意的內容為主，所以排版上可能不一定符合各位的需求。如果有人能因為這些紀錄受益，也算是自己對開源的一點貢獻吧～</p>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/19/first-post/" rel="next" title="前言">
+                <i class="fa fa-chevron-left"></i> 前言
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
-    
-    
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -614,14 +491,29 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div class="fb-comments"
+           data-href="http://indianazhao.github.io/2018/01/19/nativescript-troubleshooting/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -642,8 +534,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -698,6 +599,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system"><span class="nav-number">1.</span> <span class="nav-text">[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#錯誤訊息-TypeError-Path-must-be-a-string-Received-undefined"><span class="nav-number">2.</span> <span class="nav-text">[錯誤訊息] TypeError: Path must be a string. Received undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#錯誤訊息-承上，會看到錯誤：Could-not-find-an-emulator-image-or-identifier-to-run-your-project-Please-run-“tns-device-–available-devices”"><span class="nav-number">3.</span> <span class="nav-text">[錯誤訊息] 承上，會看到錯誤：Could not find an emulator image or identifier to run your project. Please run: “tns device  –available-devices”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝是-iOS-出了點問題，當我執行-tns-doctor-時，會一直出現-XCode-沒有安裝的提示"><span class="nav-number">4.</span> <span class="nav-text">安裝是 iOS 出了點問題，當我執行 tns doctor 時，會一直出現 XCode 沒有安裝的提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-AVD-啟動後沒有看到-emulator-視窗出現？"><span class="nav-number">5.</span> <span class="nav-text">Android AVD 啟動後沒有看到 emulator 視窗出現？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新程式碼時，emulator-無法自動更新畫面"><span class="nav-number">6.</span> <span class="nav-text">更新程式碼時，emulator 無法自動更新畫面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程式突然跑不起來，出現大量的-d-ts-錯誤，Cannot-find-module…？"><span class="nav-number">7.</span> <span class="nav-text">程式突然跑不起來，出現大量的 *.d.ts 錯誤，Cannot find module…？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -822,6 +739,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.1"></script>
+
+
 
   
 
