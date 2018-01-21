@@ -372,8 +372,9 @@
 
       
         
-          
-            <h3 id="錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system"><a href="#錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system" class="headerlink" title="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system"></a><strong>[錯誤訊息]</strong> You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system</h3><p>直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system.</p>
+          <p>過去 <a href="http://www.ezqueue.com" target="_blank" rel="noopener">MediQ 醫療輕鬆排!</a> 的 Android 版本是由我在維護。一直到 2017 年底，為了能夠同時維護 iOS 版本，開始把 MediQ 移植到 <a href="https://www.nativescript.org/" target="_blank" rel="noopener">NativeScript</a> 平台，終於可以做到「Develop once, deploy anywhere」。</p>
+<p>只是這移植的過程並非一帆風順，所以就把一路踩過的雷、跨過的坑，記錄下來…</p>
+<h3 id="錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system"><a href="#錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system" class="headerlink" title="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system"></a><strong>[錯誤訊息]</strong> You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system</h3><p>直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system.</p>
 <blockquote>
 <p><strong>[解決方法]</strong> 單獨執行分解動作的這一個步驟：<br><code>$ANDROID_HOME/tools/bin/sdkmanager &quot;tools&quot; &quot;platform-tools&quot; &quot;platforms;android-25&quot; &quot;build-tools;25.0.2&quot; &quot;extras;android;m2repository&quot; &quot;extras;google;m2repository&quot;</code></p>
 </blockquote>
@@ -385,49 +386,13 @@
 <li>刪除目錄「node_modules」與「platforms」<br>再次執行 $tns run android，會出現另一個錯誤…</li>
 </ol>
 </blockquote>
-<h3 id="錯誤訊息-承上，會看到錯誤：Could-not-find-an-emulator-image-or-identifier-to-run-your-project-Please-run-“tns-device-–available-devices”"><a href="#錯誤訊息-承上，會看到錯誤：Could-not-find-an-emulator-image-or-identifier-to-run-your-project-Please-run-“tns-device-–available-devices”" class="headerlink" title="[錯誤訊息] 承上，會看到錯誤：Could not find an emulator image or identifier to run your project. Please run: “tns device  –available-devices”"></a><strong>[錯誤訊息]</strong> 承上，會看到錯誤：Could not find an emulator image or identifier to run your project. Please run: “tns device <platform> –available-devices”</platform></h3><p>大意就是找不到 Android 裝置（或是虛擬裝置），可以先用指令<br><code>$ tns device</code> 找出所有可以用的裝置（虛擬裝置 avd，要先安裝 Android Studio，然後再用 Android SDK Manager 的介面去產生 avd）</p>
-<blockquote>
-<p><strong>[解決方法]</strong> 就直接 usb 連線一台 android 裝置，直接在實機上面跑，不跑模擬器… 暫時…</p>
-</blockquote>
-<h3 id="安裝是-iOS-出了點問題，當我執行-tns-doctor-時，會一直出現-XCode-沒有安裝的提示"><a href="#安裝是-iOS-出了點問題，當我執行-tns-doctor-時，會一直出現-XCode-沒有安裝的提示" class="headerlink" title="安裝是 iOS 出了點問題，當我執行 tns doctor 時，會一直出現 XCode 沒有安裝的提示"></a>安裝是 iOS 出了點問題，當我執行 tns doctor 時，會一直出現 XCode 沒有安裝的提示</h3><p><code>$ tns doctor</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">WARNING: Xcode is not installed or is not configured properly.</span><br><span class="line">You will not be able to build your projects <span class="keyword">for</span> iOS or run them <span class="keyword">in</span> the iOS Simulator.</span><br><span class="line">To be able to build <span class="keyword">for</span> iOS and run apps <span class="keyword">in</span> the native emulator, verify that you have installed Xcode.</span><br><span class="line">There seem to be issues with your configuration.</span><br><span class="line">? Do you want to visit the official documentation? Yes</span><br><span class="line">? Do you want to run the setup script? Yes</span><br><span class="line">This scripts needs sudo permissions</span><br><span class="line">Password:</span><br><span class="line">NativeScript requires Xcode.</span><br><span class="line">If you <span class="keyword">do</span> not have Xcode installed, download and install it from App Store and run it once to complete its setup.</span><br><span class="line">Do you have Xcode installed? (y/n)</span><br><span class="line">y</span><br><span class="line">xcode-select: error: tool <span class="string">'xcodebuild'</span> requires Xcode, but active developer directory <span class="string">'/Library/Developer/CommandLineTools'</span> is a <span class="built_in">command</span> line tools instance</span><br><span class="line">Xcode is not installed or not configured properly. Download, install, <span class="built_in">set</span> it up and run this script again.</span><br><span class="line">Your components are up-to-date: </span><br><span class="line">nativescript,tns-core-modules,tns-android,tns-ios</span><br><span class="line">When you file an issue, these warnings will <span class="built_in">help</span> the NativeScript team to investigate, identify, and resolve the report.</span><br><span class="line">Please, ignore them <span class="keyword">if</span> you are not experiencing any issues with NativeScript.</span><br></pre></td></tr></table></figure>
-<p>試著執行 <code>$ xcodebuild</code>，會出現錯誤</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-select: error: tool <span class="string">'xcodebuild'</span> requires Xcode, but active developer directory <span class="string">'/Library/Developer/CommandLineTools'</span> is a <span class="built_in">command</span> line tools instance</span><br></pre></td></tr></table></figure>
-<p>後來用這個指令解決： <code>$ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer</code></p>
-<p>參考連結：<a href="https://github.com/nodejs/node-gyp/issues/569#issuecomment-94917337" target="_blank" rel="noopener">link</a></p>
-<h3 id="Android-AVD-啟動後沒有看到-emulator-視窗出現？"><a href="#Android-AVD-啟動後沒有看到-emulator-視窗出現？" class="headerlink" title="Android AVD 啟動後沒有看到 emulator 視窗出現？"></a>Android AVD 啟動後沒有看到 emulator 視窗出現？</h3><p>Android AVD (Android Virtual Device) 啟動以後，只有看到狀態列持續出現「Waiting for target device to come online…」，然後就 timeout 消失，沒有看到 emulator 視窗出現？</p>
-<p>過程就不說了，重新安裝、$ adb kill-server、… 幾乎都嘗試過，沒有用，就是無法出現 emulator… 最後，看到有人提到「環境變數」錯誤，就試試看，居然就可以了！</p>
-<blockquote>
-<ol>
-<li>編輯 bash 檔案： $ vi ~/.bash_profile</li>
-<li>原本這一行（錯誤路徑）： <code>export ANDROID_HOME=/usr/local/Caskroom/android-sdk/25.2.3</code><br>改成（正確路徑）： <code>export ANDROID_HOME=/Users/indiana/Library/Android/sdk</code></li>
-<li>順便加上： <code>export ANDROID_SDK_ROOT=/Users/indiana/Library/Android/sdk/</code></li>
-<li>存擋後，讓新設定作用： <code>$ source ~/.bash_profile</code></li>
-</ol>
-</blockquote>
-<h3 id="更新程式碼時，emulator-無法自動更新畫面"><a href="#更新程式碼時，emulator-無法自動更新畫面" class="headerlink" title="更新程式碼時，emulator 無法自動更新畫面"></a>更新程式碼時，emulator 無法自動更新畫面</h3><p>不知是否因為之前的問題，重新安裝的 Android Studio 造成一些版本衝突的問題，在更新程式碼時，emulator 無法自動更新畫面，會出現此錯誤：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Exception <span class="keyword">in</span> thread <span class="string">"main"</span> java.lang.IllegalArgumentException: Class android.support.graphics.drawable.AnimatedVectorDrawableCompat<span class="variable">$AnimatedVectorDrawableCompatState</span> conflict:...</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>[解決方法]</strong> 下兩個指令解決這個問題：<br>$ tns platform remove android<br>$ tns platform add android</p>
-</blockquote>
-<p>參考連結：<a href="https://github.com/NativeScript/android-runtime/issues/339#issuecomment-222046075" target="_blank" rel="noopener">link</a></p>
-<h3 id="程式突然跑不起來，出現大量的-d-ts-錯誤，Cannot-find-module…？"><a href="#程式突然跑不起來，出現大量的-d-ts-錯誤，Cannot-find-module…？" class="headerlink" title="程式突然跑不起來，出現大量的 *.d.ts 錯誤，Cannot find module…？"></a>程式突然跑不起來，出現大量的 *.d.ts 錯誤，Cannot find module…？</h3><p>無論執行 <code>$ tns run ios/android</code> 都一樣，出現大量類似以下錯誤：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app/tns_modules/@angular/router/upgrade/src/upgrade.d.ts(9,31): error TS2307: Cannot find module <span class="string">'@angular/upgrade/static'</span>.</span><br></pre></td></tr></table></figure>
-<p>試著用 <code>$ tns platform clean android</code>，或是手動刪除/建立：</p>
-<ul>
-<li>$ tns platform remove android</li>
-<li>$ tns platform add android</li>
-</ul>
-<p>都一樣。</p>
-<p>後來把這幾個資料夾都刪除，重新跑 <code>$ tns run android</code>，再次安裝，就可以了：</p>
-<ul>
-<li>app/tns_modules</li>
-<li>platform/android</li>
-<li>platform/ios</li>
-</ul>
-<p>參考連結：<a href="https://github.com/NativeScript/nativescript-angular/issues/916#issuecomment-318860411" target="_blank" rel="noopener">link</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/19/nativescript-troubleshooting/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

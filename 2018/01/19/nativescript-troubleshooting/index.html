@@ -103,17 +103,17 @@
   <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta name="description" content="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android">
+<meta name="description" content="過去 MediQ 醫療輕鬆排! 的 Android 版本是由我在維護。一直到 2017 年底，為了能夠同時維護 iOS 版本，開始把 MediQ 移植到 NativeScript 平台，終於可以做到「Develop once, deploy anywhere」。 只是這移植的過程並非一帆風順，所以就把一路踩過的雷、跨過的坑，記錄下來… [錯誤訊息] You need to have Androi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NativeScript 的故障排除">
 <meta property="og:url" content="http://indianazhao.github.io/2018/01/19/nativescript-troubleshooting/index.html">
 <meta property="og:site_name" content="Indiana 的學習筆記">
-<meta property="og:description" content="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android">
+<meta property="og:description" content="過去 MediQ 醫療輕鬆排! 的 Android 版本是由我在維護。一直到 2017 年底，為了能夠同時維護 iOS 版本，開始把 MediQ 移植到 NativeScript 平台，終於可以做到「Develop once, deploy anywhere」。 只是這移植的過程並非一帆風順，所以就把一路踩過的雷、跨過的坑，記錄下來… [錯誤訊息] You need to have Androi">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-01-21T08:14:55.929Z">
+<meta property="og:updated_time" content="2018-01-21T10:12:47.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NativeScript 的故障排除">
-<meta name="twitter:description" content="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android">
+<meta name="twitter:description" content="過去 MediQ 醫療輕鬆排! 的 Android 版本是由我在維護。一直到 2017 年底，為了能夠同時維護 iOS 版本，開始把 MediQ 移植到 NativeScript 平台，終於可以做到「Develop once, deploy anywhere」。 只是這移植的過程並非一帆風順，所以就把一路踩過的雷、跨過的坑，記錄下來… [錯誤訊息] You need to have Androi">
 
 
 
@@ -372,7 +372,9 @@
       
 
       
-        <h3 id="錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system"><a href="#錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system" class="headerlink" title="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system"></a><strong>[錯誤訊息]</strong> You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system</h3><p>直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system.</p>
+        <p>過去 <a href="http://www.ezqueue.com" target="_blank" rel="noopener">MediQ 醫療輕鬆排!</a> 的 Android 版本是由我在維護。一直到 2017 年底，為了能夠同時維護 iOS 版本，開始把 MediQ 移植到 <a href="https://www.nativescript.org/" target="_blank" rel="noopener">NativeScript</a> 平台，終於可以做到「Develop once, deploy anywhere」。</p>
+<p>只是這移植的過程並非一帆風順，所以就把一路踩過的雷、跨過的坑，記錄下來…</p>
+<h3 id="錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system"><a href="#錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system" class="headerlink" title="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system"></a><strong>[錯誤訊息]</strong> You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system</h3><p>直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system.</p>
 <blockquote>
 <p><strong>[解決方法]</strong> 單獨執行分解動作的這一個步驟：<br><code>$ANDROID_HOME/tools/bin/sdkmanager &quot;tools&quot; &quot;platform-tools&quot; &quot;platforms;android-25&quot; &quot;build-tools;25.0.2&quot; &quot;extras;android;m2repository&quot; &quot;extras;google;m2repository&quot;</code></p>
 </blockquote>
@@ -384,6 +386,7 @@
 <li>刪除目錄「node_modules」與「platforms」<br>再次執行 $tns run android，會出現另一個錯誤…</li>
 </ol>
 </blockquote>
+<a id="more"></a>
 <h3 id="錯誤訊息-承上，會看到錯誤：Could-not-find-an-emulator-image-or-identifier-to-run-your-project-Please-run-“tns-device-–available-devices”"><a href="#錯誤訊息-承上，會看到錯誤：Could-not-find-an-emulator-image-or-identifier-to-run-your-project-Please-run-“tns-device-–available-devices”" class="headerlink" title="[錯誤訊息] 承上，會看到錯誤：Could not find an emulator image or identifier to run your project. Please run: “tns device  –available-devices”"></a><strong>[錯誤訊息]</strong> 承上，會看到錯誤：Could not find an emulator image or identifier to run your project. Please run: “tns device <platform> –available-devices”</platform></h3><p>大意就是找不到 Android 裝置（或是虛擬裝置），可以先用指令<br><code>$ tns device</code> 找出所有可以用的裝置（虛擬裝置 avd，要先安裝 Android Studio，然後再用 Android SDK Manager 的介面去產生 avd）</p>
 <blockquote>
 <p><strong>[解決方法]</strong> 就直接 usb 連線一台 android 裝置，直接在實機上面跑，不跑模擬器… 暫時…</p>
