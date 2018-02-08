@@ -276,6 +276,197 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://indianazhao.github.io/2018/02/08/profile-bash-profile-bashrc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Indiana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Indiana 的學習筆記">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/08/profile-bash-profile-bashrc/" itemprop="url">profile，bash_profile 與 bashrc</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-02-08T10:14:16+08:00">2018-02-08</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/08/profile-bash-profile-bashrc/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://indianazhao.github.io/2018/02/08/profile-bash-profile-bashrc/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="profile，bash-profile-與-bashrc"><a href="#profile，bash-profile-與-bashrc" class="headerlink" title="profile，bash_profile 與 bashrc"></a>profile，bash_profile 與 bashrc</h2><p><strong>/etc/profile</strong>: 此文件為系統的每個用戶設置環境信息，當用戶第一次登錄時，該文件被執行。<br>並從/etc/profile.d目錄的配置文件中蒐集shell的設置。</p>
+<p><strong>/etc/bashrc</strong>: 為每一個運行bash shell的用戶執行此文件.當bash shell被打開時，該文件被讀取。</p>
+<p><strong>~/.bash_profile</strong>: 每個用戶都可使用該文件輸入專用於自己使用的shell信息，當用戶登錄時，該<br>文件僅僅執行一次!默認情況下，他設置一些環境變量，執行用戶的.bashrc文件。</p>
+<p><strong>~/.bashrc</strong>: 該文件包含專用於你的bash shell的bash信息，當登錄時以及每次打開新的shell時，該<br>該文件被讀取。</p>
+<p><strong>~/.bash_logout</strong>: 當每次退出系統(退出bash shell)時，執行該文件。 </p>
+<p>另外，<em>/etc/profile</em> 中設定的變量(全局)的可以作用於任何用戶，而 <em>~/.bashrc</em> 等中設定的變量(局部)只能繼承 <em>/etc/profile</em> 中的變量，他們是”父子”關係。</p>
+<p><em>~/.bash_profile</em> 是交互式、login方 式進入 bash 運行的；<em>~/.bashrc</em> 是交互式 non-login 方式進入bash 行的。通常二者設置大致相同，所以通常前者會調用後者。</p>
+<p><strong>設置生效</strong>：可以重啟生效，也可以使用命令：source<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias php=/var/eyouim/pub/php/bin/php</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure></p>
+<h2 id="用戶環境配置"><a href="#用戶環境配置" class="headerlink" title="用戶環境配置"></a>用戶環境配置</h2><p>為使 Bash 更好地為我們服務，我們需定制 bash shell 環境。</p>
+<h3 id="bash-profile、-bashrc、和-bash-logout"><a href="#bash-profile、-bashrc、和-bash-logout" class="headerlink" title=".bash_profile、.bashrc、和.bash_logout"></a>.bash_profile、.bashrc、和.bash_logout</h3><ol>
+<li><p>上面這三個文件是 bash shell 的用戶環境配置文件，位於用戶的主目錄下。其中 .bash_profile 是最重要的一個配置文件，它在用戶每次登錄系統時被讀取，裡面的所有命令都會被 bash 執行。.profile (由 Bourne Shell 和 Korn Shell 使用) 和 .login (由C Shell使用) 兩個文件是 .bash_profile 的同義詞，目的是為了兼容其它 Shell。在 Debian 中使用 .profile 文件代替 .bash_profile 文件。</p>
+</li>
+<li><p>.bashrc 文件會在 bash shell 調用另一個 bash shell 時讀取，也就是在 shell 中再鍵入 bash 命令啟動一個新 shell 時就會去讀該文件。這樣可有效分離登錄和子 shell 所需的環境。但一般來說都會在 .bash_profile 裡調用 .bashrc 腳本以便統一配置用戶環境。</p>
+</li>
+<li><p>.bash_logout 在退出 shell 時被讀取。所以我們可把一些清理工作的命令放到這文件中。</p>
+</li>
+</ol>
+<p>在 /etc 目錄的 bash.bashrc 和 profile 是系統級（全局）的配置文件，當在用戶主目錄下找不到 .bash_profile 和 .bashrc\ 時，就會讀取這兩個文件。.bash_history 是 bash shell 的歷史記錄文件，裡面記錄了你在 bash shell 中輸入的所有命令。可通過 HISSIZE 環境變量設置在歷史記錄文件裡保存記錄的條數。<code>alias l = &#39;ls -l&#39;</code> 是設置別名的語句，把它放在這些配置文檔中就可使我們能用簡單的 ‘l’ 命令，代替 ‘ls -l’ 命令。</p>
+<h4 id="Note"><a href="#Note" class="headerlink" title="[Note]"></a>[Note]</h4><p>當我們修改了這些配置件後，可用 <code>source .bash_profile</code> 命令使它修改內容馬上生效。</p>
+<h3 id="選項-shopt-Shell-Option"><a href="#選項-shopt-Shell-Option" class="headerlink" title="選項 (shopt, Shell Option)"></a>選項 (shopt, Shell Option)</h3><p>bash shell 中的選項可控制 shell 的行為和功能，我們可以通過 shopt 命令來設置。使用 set 命令也可以，但它已被 shopt 替代，但為了向下兼容，set 命令還是可以使用的。使用不帶參數的 shopt 命令可以列出當前 shell 中只能由 shopt 設置的選項，用 shopt -o 可列出可由 set 命令設置的選項。</p>
+<p>下面是一些可由 set 命令基本的選項，默認是關閉的。</p>
+<ul>
+<li>emacs 進入 emacs 編輯模式</li>
+<li>vi 進入 vi 編輯模式</li>
+<li>ignoreeof 不允許單獨使用 Ctrl_D 退出的用法，要使用 exit。與 IGNOREEOF=10 等價</li>
+<li>noclobber 不允許重定向覆蓋已存在文件</li>
+<li>noglob 不允許擴展文件名通配符</li>
+<li>nounset 使用未定義的變量時給出錯誤</li>
+</ul>
+<p>下面是一些只能由 shopt 命令設置的選項。</p>
+<ul>
+<li>cdspell 自動改正 cd 命令參數中的小錯誤</li>
+<li>hostcomplete 以 @ 開頭時，按 tab 鍵可進行主機名的自動完成</li>
+<li>dotgblob 以點開始的文件名被包含在路徑名擴展中</li>
+<li>mailwarn 顯示郵件警告信息</li>
+<li>shopt 命令的選項如下：<ul>
+<li>-p 顯示可設置選項及當前取值</li>
+<li>-s 設置每一選項為on</li>
+<li>-u 設置每一選項為off</li>
+<li>-q 不輸出信息</li>
+<li>-o 顯示選項設置</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://indianazhao.github.io/2018/01/19/nativescript-troubleshooting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -377,14 +568,6 @@
 <h3 id="錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system"><a href="#錯誤訊息-You-need-to-have-Android-SDK-22-or-later-and-the-latest-Android-Support-Repository-installed-on-your-system" class="headerlink" title="[錯誤訊息] You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system"></a><strong>[錯誤訊息]</strong> You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system</h3><p>直接利用官方提供的單一 script，雖然可以一路安裝到底，但是最後用 $tns doctor 檢查是否正確時，會出現錯誤：You need to have Android SDK 22 or later and the latest Android Support Repository installed on your system.</p>
 <blockquote>
 <p><strong>[解決方法]</strong> 單獨執行分解動作的這一個步驟：<br><code>$ANDROID_HOME/tools/bin/sdkmanager &quot;tools&quot; &quot;platform-tools&quot; &quot;platforms;android-25&quot; &quot;build-tools;25.0.2&quot; &quot;extras;android;m2repository&quot; &quot;extras;google;m2repository&quot;</code></p>
-</blockquote>
-<h3 id="錯誤訊息-TypeError-Path-must-be-a-string-Received-undefined"><a href="#錯誤訊息-TypeError-Path-must-be-a-string-Received-undefined" class="headerlink" title="[錯誤訊息] TypeError: Path must be a string. Received undefined"></a><strong>[錯誤訊息]</strong> TypeError: Path must be a string. Received undefined</h3><p>直接執行 HelloWorld 範例的 $tns run android 時，會看到錯誤：TypeError: Path must be a string. Received undefined</p>
-<blockquote>
-<p><strong>[解決方法]</strong> 參考連結：<a href="https://github.com/NativeScript/nativescript-angular/issues/781#issuecomment-299745863" target="_blank" rel="noopener">link</a></p>
-<ol>
-<li>把 package.json 裡頭的「tns-android」移除</li>
-<li>刪除目錄「node_modules」與「platforms」<br>再次執行 $tns run android，會出現另一個錯誤…</li>
-</ol>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
@@ -627,7 +810,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">文章</span>
                   </a>
                 </div>
@@ -638,12 +821,21 @@
                 
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分類</span>
                   </a>
                 </div>
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">標籤</span>
+                  
+                </div>
               
             </nav>
           

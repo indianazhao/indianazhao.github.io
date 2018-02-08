@@ -100,17 +100,18 @@
 
 
   
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="nativescript," />
 
 
 <meta name="description" content="過去 MediQ 醫療輕鬆排! 的 Android 版本是由我在維護。一直到 2017 年底，為了能夠同時維護 iOS 版本，開始把 MediQ 移植到 NativeScript 平台，終於可以做到「Develop once, deploy anywhere」。 只是這移植的過程並非一帆風順，所以就把一路踩過的雷、跨過的坑，記錄下來… [錯誤訊息] You need to have Androi">
+<meta name="keywords" content="nativescript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NativeScript 的故障排除">
 <meta property="og:url" content="http://indianazhao.github.io/2018/01/19/nativescript-troubleshooting/index.html">
 <meta property="og:site_name" content="Indiana 的學習筆記">
 <meta property="og:description" content="過去 MediQ 醫療輕鬆排! 的 Android 版本是由我在維護。一直到 2017 年底，為了能夠同時維護 iOS 版本，開始把 MediQ 移植到 NativeScript 平台，終於可以做到「Develop once, deploy anywhere」。 只是這移植的過程並非一帆風順，所以就把一路踩過的雷、跨過的坑，記錄下來… [錯誤訊息] You need to have Androi">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-01-21T10:12:47.134Z">
+<meta property="og:updated_time" content="2018-02-08T02:53:07.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NativeScript 的故障排除">
 <meta name="twitter:description" content="過去 MediQ 醫療輕鬆排! 的 Android 版本是由我在維護。一直到 2017 年底，為了能夠同時維護 iOS 版本，開始把 MediQ 移植到 NativeScript 平台，終於可以做到「Develop once, deploy anywhere」。 只是這移植的過程並非一帆風順，所以就把一路踩過的雷、跨過的坑，記錄下來… [錯誤訊息] You need to have Androi">
@@ -378,6 +379,7 @@
 <blockquote>
 <p><strong>[解決方法]</strong> 單獨執行分解動作的這一個步驟：<br><code>$ANDROID_HOME/tools/bin/sdkmanager &quot;tools&quot; &quot;platform-tools&quot; &quot;platforms;android-25&quot; &quot;build-tools;25.0.2&quot; &quot;extras;android;m2repository&quot; &quot;extras;google;m2repository&quot;</code></p>
 </blockquote>
+<a id="more"></a>
 <h3 id="錯誤訊息-TypeError-Path-must-be-a-string-Received-undefined"><a href="#錯誤訊息-TypeError-Path-must-be-a-string-Received-undefined" class="headerlink" title="[錯誤訊息] TypeError: Path must be a string. Received undefined"></a><strong>[錯誤訊息]</strong> TypeError: Path must be a string. Received undefined</h3><p>直接執行 HelloWorld 範例的 $tns run android 時，會看到錯誤：TypeError: Path must be a string. Received undefined</p>
 <blockquote>
 <p><strong>[解決方法]</strong> 參考連結：<a href="https://github.com/NativeScript/nativescript-angular/issues/781#issuecomment-299745863" target="_blank" rel="noopener">link</a></p>
@@ -386,7 +388,6 @@
 <li>刪除目錄「node_modules」與「platforms」<br>再次執行 $tns run android，會出現另一個錯誤…</li>
 </ol>
 </blockquote>
-<a id="more"></a>
 <h3 id="錯誤訊息-承上，會看到錯誤：Could-not-find-an-emulator-image-or-identifier-to-run-your-project-Please-run-“tns-device-–available-devices”"><a href="#錯誤訊息-承上，會看到錯誤：Could-not-find-an-emulator-image-or-identifier-to-run-your-project-Please-run-“tns-device-–available-devices”" class="headerlink" title="[錯誤訊息] 承上，會看到錯誤：Could not find an emulator image or identifier to run your project. Please run: “tns device  –available-devices”"></a><strong>[錯誤訊息]</strong> 承上，會看到錯誤：Could not find an emulator image or identifier to run your project. Please run: “tns device <platform> –available-devices”</platform></h3><p>大意就是找不到 Android 裝置（或是虛擬裝置），可以先用指令<br><code>$ tns device</code> 找出所有可以用的裝置（虛擬裝置 avd，要先安裝 Android Studio，然後再用 Android SDK Manager 的介面去產生 avd）</p>
 <blockquote>
 <p><strong>[解決方法]</strong> 就直接 usb 連線一台 android 裝置，直接在實機上面跑，不跑模擬器… 暫時…</p>
@@ -443,6 +444,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/nativescript/" rel="tag"># nativescript</a>
+          
+        </div>
+      
 
       
       
@@ -479,6 +486,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/08/profile-bash-profile-bashrc/" rel="prev" title="profile，bash_profile 與 bashrc">
+                profile，bash_profile 與 bashrc <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -566,7 +577,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">文章</span>
                   </a>
                 </div>
@@ -577,12 +588,21 @@
                 
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分類</span>
                   </a>
                 </div>
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">標籤</span>
+                  
+                </div>
               
             </nav>
           
