@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="Indiana 的學習筆記">
 <meta property="og:description" content="profile，bash_profile 與 bashrc/etc/profile: 此文件為系統的每個用戶設置環境信息，當用戶第一次登錄時，該文件被執行。並從/etc/profile.d目錄的配置文件中蒐集shell的設置。 /etc/bashrc: 為每一個運行bash shell的用戶執行此文件.當bash shell被打開時，該文件被讀取。 ~/.bash_profile: 每個用戶都可使">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-02-08T02:52:53.174Z">
+<meta property="og:updated_time" content="2018-02-08T02:59:55.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="profile，bash_profile 與 bashrc">
 <meta name="twitter:description" content="profile，bash_profile 與 bashrc/etc/profile: 此文件為系統的每個用戶設置環境信息，當用戶第一次登錄時，該文件被執行。並從/etc/profile.d目錄的配置文件中蒐集shell的設置。 /etc/bashrc: 為每一個運行bash shell的用戶執行此文件.當bash shell被打開時，該文件被讀取。 ~/.bash_profile: 每個用戶都可使">
@@ -378,12 +378,14 @@
 <p><strong>~/.bash_profile</strong>: 每個用戶都可使用該文件輸入專用於自己使用的shell信息，當用戶登錄時，該<br>文件僅僅執行一次!默認情況下，他設置一些環境變量，執行用戶的.bashrc文件。</p>
 <p><strong>~/.bashrc</strong>: 該文件包含專用於你的bash shell的bash信息，當登錄時以及每次打開新的shell時，該<br>該文件被讀取。</p>
 <p><strong>~/.bash_logout</strong>: 當每次退出系統(退出bash shell)時，執行該文件。 </p>
-<p>另外，<em>/etc/profile</em> 中設定的變量(全局)的可以作用於任何用戶，而 <em>~/.bashrc</em> 等中設定的變量(局部)只能繼承 <em>/etc/profile</em> 中的變量，他們是”父子”關係。</p>
-<p><em>~/.bash_profile</em> 是交互式、login方 式進入 bash 運行的；<em>~/.bashrc</em> 是交互式 non-login 方式進入bash 行的。通常二者設置大致相同，所以通常前者會調用後者。</p>
-<p><strong>設置生效</strong>：可以重啟生效，也可以使用命令：source<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias php=/var/eyouim/pub/php/bin/php</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure></p>
+<p>另外，/etc/profile 中設定的變量(全局)的可以作用於任何用戶，而 ~/.bashrc 等中設定的變量(局部)只能繼承 /etc/profile 中的變量，他們是”父子”關係。</p>
+<p>~/.bash_profile 是交互式、login 方式進入 bash 運行的；~/.bashrc 是交互式 non-login 方式進入 bash 運行的。通常二者設置大致相同，所以通常前者會調用後者。</p>
+<p><strong>設置生效</strong>：可以重啟生效，也可以使用命令：source</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> php=/var/eyouim/pub/php/bin/php</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="用戶環境配置"><a href="#用戶環境配置" class="headerlink" title="用戶環境配置"></a>用戶環境配置</h2><p>為使 Bash 更好地為我們服務，我們需定制 bash shell 環境。</p>
 <h3 id="bash-profile、-bashrc、和-bash-logout"><a href="#bash-profile、-bashrc、和-bash-logout" class="headerlink" title=".bash_profile、.bashrc、和.bash_logout"></a>.bash_profile、.bashrc、和.bash_logout</h3><ol>
-<li><p>上面這三個文件是 bash shell 的用戶環境配置文件，位於用戶的主目錄下。其中 .bash_profile 是最重要的一個配置文件，它在用戶每次登錄系統時被讀取，裡面的所有命令都會被 bash 執行。.profile (由 Bourne Shell 和 Korn Shell 使用) 和 .login (由C Shell使用) 兩個文件是 .bash_profile 的同義詞，目的是為了兼容其它 Shell。在 Debian 中使用 .profile 文件代替 .bash_profile 文件。</p>
+<li><p>上面這三個文件是 bash shell 的用戶環境配置文件，位於用戶的主目錄下。其中 .bash_profile 是最重要的一個配置文件，它在用戶每次登錄系統時被讀取，裡面的所有命令都會被 bash 執行。.profile (由 Bourne Shell 和 Korn Shell 使用) 和 .login (由 C Shell 使用) 兩個文件是 .bash_profile 的同義詞，目的是為了兼容其它 Shell。在 Debian 中使用 .profile 文件代替 .bash_profile 文件。</p>
 </li>
 <li><p>.bashrc 文件會在 bash shell 調用另一個 bash shell 時讀取，也就是在 shell 中再鍵入 bash 命令啟動一個新 shell 時就會去讀該文件。這樣可有效分離登錄和子 shell 所需的環境。但一般來說都會在 .bash_profile 裡調用 .bashrc 腳本以便統一配置用戶環境。</p>
 </li>
